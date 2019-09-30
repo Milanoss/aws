@@ -1,6 +1,12 @@
 config: 
 
 resources:
+- name: repo-milanoss
+  type: git
+  source:
+    uri: https://github.com/Milanoss/aws.git
+    branch: master
+
 - name: repo-channel-api
   type: git
   source:
@@ -42,6 +48,7 @@ jobs:
   plan:
   - get: repo-channel-api
     trigger: false
+  - get: repo-milanoss
   - task: build-lambdas
-    file: build-lambdas.yml
+    file: repo-milanoss/build-lambdas.yml
 
