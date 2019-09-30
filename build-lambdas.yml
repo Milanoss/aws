@@ -5,6 +5,8 @@ image_resource:
   type: docker-image
   source: {repository: busybox}
   
+inputs:
+  - name: repo-milanoss
 run:
   path: repo-milanoss/build-lambdas.sh
 
