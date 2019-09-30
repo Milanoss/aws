@@ -6,8 +6,5 @@ image_resource:
   source: {repository: node, tag: 8-jessie}
   
 run:
-  path: repo-milanoss/build-lambdas.sh
+  path: ls
 
-outputs:
-# make zip folder available for subsequent task
-- name: zip
