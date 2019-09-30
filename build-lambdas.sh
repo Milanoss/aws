@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sudo chmod +x *.sh
 set -x
 
 # update apt to install zip
