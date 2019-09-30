@@ -3,8 +3,11 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source: {repository: node, tag: 8-jessie}
+  source: {repository: busybox}
   
 run:
-  path: ls
+  path: repo-milanoss/build-lambdas.sh
 
+outputs:
+# make zip folder available for subsequent task
+- name: zip
