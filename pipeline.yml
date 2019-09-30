@@ -47,8 +47,9 @@ jobs:
   serial: true
   plan:
   - get: repo-channel-api
-    trigger: false
+    trigger: false               
   - get: repo-milanoss
+    trigger: false
   - task: build-lambdas
     file: repo-milanoss/build-lambdas.yml
 
