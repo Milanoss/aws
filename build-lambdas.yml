@@ -9,4 +9,8 @@ inputs:
   - name: repo-milanoss
 run:
   path: ls
+  args:
+  - repo-milanoss 
 
+run:
+  path: pwd
