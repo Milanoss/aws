@@ -10,6 +10,3 @@ inputs:
 run:
   path: repo-milanoss/build-lambdas.sh
 
-outputs:
-# make zip folder available for subsequent task
-- name: zip
