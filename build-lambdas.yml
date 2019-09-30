@@ -8,5 +8,5 @@ image_resource:
 inputs:
   - name: repo-milanoss
 run:
-  path: repo-milanoss/build-lambdas.sh
+  path: ls
 
