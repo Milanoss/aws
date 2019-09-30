@@ -1,0 +1,47 @@
+config: 
+
+resources:
+- name: repo-channel-api
+  type: git
+  source:
+    uri: git@github.com:TeliaSoneraNorge/channel-api-functions.git
+    branch: master
+    paths: [ functions ]
+    private_key: |
+      -----BEGIN RSA PRIVATE KEY-----
+      MIIEogIBAAKCAQEA1y/J3GeaOzw2arqeIvt70caBlHEcBgeN70KvVwq/vfXG3fh2
+      gIBBFHGyx67SkJYlZfqE8QD6WkA/j8OoOfk2nv/8zpvzOVcITHCY393XwZmmvvLT
+      6JbpSM/ZzKWWuUdHiXt5Mxvu9ZSKt90vuoeHl5KGjXMJ/FJ/LKJE4395Z/lROwgo
+      eG98abXbfBLaokZsFmd5y7lgNvWI9dwzsGhR4lR8+iMq2sK4Tv67mvZrySq17wip
+      qY+T6ZreNO8rkBw3HX76f217IaNBGuhJt4P854UKmbC/+HDE5y2x5gg/Enyhd2n1
+      xmK3F2VmlvlXIv/zVVQBsVr2t/3Gl/66wmOn8QIDAQABAoIBADtjNfu9IASvFnmY
+      LWKMM1zuwv5bxRco6JQavFdyYP6lIRBLrTDDtLJWurd/WR+MQKAHZr84vN9Bkgk0
+      P25YiCmTjora4WJ20ZR/EsHd8Ni+dhWG4NL1K0bsDjj7jkBuGqEn0Yg4cleWej5K
+      Lgz1sIc1aisJj7zya6S+1/JNUQ1PcOvkMsi37+F5aQz3p/exdKxtjzCI7OdAqih9
+      BDzhKyY+RTeGuUVja6PqdOvWeWUBwelyo7HaCFems7qHKMCkAxI80AX8sR/g3CkM
+      RpGfDfGkK18FPw4pNxmoEmZOFR5PSW2rCY1Ifp9fsqLR7FO42DtYMVmuez8JbD5x
+      yvIr1y0CgYEA8nOxTTMgLs0++ZN7sLgyD2Az+IyOSCUBtMUxwSKmW+y/o+jmZL7z
+      rzNPqrwDYz5XO0MEaeQoJ19xVyvdzJRRp9+ss80QZdxe8H55ZeW3kyXc43GB23/0
+      ze1bfdaCRp+w0zINXkx1wtblJKCCndk7v06e2ho7zC+GEt65M9KSOdsCgYEA4zYQ
+      F5ExO2Owd4XtrDk8Xqql/H8vNOKANvem2zVgIRSEBtRZOdQfwR35s4W31r4L7P1H
+      rQR2jTmu2dw67DLwFdrYbet20CnhI3nSJ/F65K/HayYxYej9MxMjzJ6G0FEas+rM
+      i5Ug6gGnTtI8epA//j0xnQpZrdSl6Qdizkli7SMCgYBKrl5P1E62e9xJDifMgIBT
+      AiQgDFOLX3LOFuvDfQPXTu6c85F8OOFg9yI0CiPU/w/pnjQO1guUTS7hVg7FBG6+
+      kgRlgeXqKl5IH/0O6RqJxeDrYjxIu3pRsCo9ccTBMlFKTKGXiV/Au2bryFFTg+WG
+      gRYnQmtm8sCOsXJExzjpfwKBgArEqyqSxQSNivV/MW5yH/xUlh1LYc9d1LnGLvBA
+      rVekA0XXlor5FLAwXX82nSneQ+5tapI2ne+/hhvpJhm/qEVA4/UBrdXbxkHKKj2e
+      YjaoZgkb/EcppaZgB9hQww7oaR2RyTPsU20DuwwvRpKAd6fy+oD41ps4csyCfxpL
+      vBaFAoGAT0mJMBDV+Y538ItGWPlk1ycn4lnzXwt9Q39md8ZETTuwYoJ6qP7lR1VL
+      P+MjnIbVS6jqc0ir/uOe5BD13wZ2Jepu91oQSBsoZKhQbNspnwLAiB8wiiFThr/S
+      Pjut4a69+A7WQOprVCMCEFp/hWy/7Gw6Q9s7eceWv2h7hkD2wtM=
+      -----END RSA PRIVATE KEY-----
+
+jobs:
+- name: lambdas-build-staging
+  serial: true
+  plan:
+  - get: repo-channel-api
+    trigger: false
+  - task: build-lambdas
+    file: build-lambdas.yml
+

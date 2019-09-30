@@ -1,0 +1,1 @@
+fly --target channel-api login --concourse-url http://127.0.0.1:8080 -u admin -p admin

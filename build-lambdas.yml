@@ -1,0 +1,13 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: node, tag: 8-jessie}
+
+run:
+  path: build-cbm-aws-lambdas.sh
+
+outputs:
+# make zip folder available for subsequent task
+- name: zip
