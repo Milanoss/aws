@@ -10,6 +10,8 @@ apt-get install -y zip
 # zip files will be at this directory as result of for loop
 mkdir -p zip
 
+ls -l
+
 cd functions
 
 for D in */;
