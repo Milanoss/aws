@@ -30,9 +30,9 @@ npm run build
 fi
 
 # reset timestamp of all files that will be included in zip, because of checksum calculation
-touch -t 201901010101 . *
+touch -t 201901010101 . handler.js
 
-zip -rX ${DIR_NAME}.zip .
+zip -rX ${DIR_NAME}.zip handler.js
 
 # create sum
 openssl dgst -sha256 -binary ${DIR_NAME}.zip | openssl enc -base64 | cut -d " " -f 1 | tr -d '\n' > ${DIR_NAME}.zip.sha256sum
