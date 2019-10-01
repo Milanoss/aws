@@ -22,6 +22,7 @@ DIR_NAME=`basename $PWD`
 
 if [ -f package.json ]; then
 npm install
+npm run build
 fi
 
 # reset timestamp of all files that will be included in zip, because of checksum calculation
