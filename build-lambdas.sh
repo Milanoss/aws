@@ -10,7 +10,7 @@ apt-get install -y zip
 # zip files will be at this directory as result of for loop
 mkdir -p zip
 
-cd cbm-aws-repo-lambdas-all/lambdas
+cd repo-channel-api/functions
 
 for D in */;
 do
