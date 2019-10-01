@@ -6,7 +6,9 @@ set -x
 apt-get update
 apt-get install -y zip
 
+cd repo-channel-api
 npm install
+cd ..
 
 # create directory next to cbm-aws-repo-lambdas-all
 # zip files will be at this directory as result of for loop
