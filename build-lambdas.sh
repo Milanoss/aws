@@ -6,7 +6,7 @@ set -x
 apt-get update
 apt-get install -y zip
 
-npm install webpack -g
+npm install
 
 # create directory next to cbm-aws-repo-lambdas-all
 # zip files will be at this directory as result of for loop
