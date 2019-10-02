@@ -7,7 +7,7 @@ apt-get update
 apt-get install -y zip
 
 cd repo-channel-api
-npm install
+npm ci
 cd ..
 
 # create directory next to cbm-aws-repo-lambdas-all
@@ -16,7 +16,8 @@ mkdir -p zip
 
 cd repo-channel-api/functions
 
-for D in */;
+#for D in */;
+for D in account-data account-update
 do
 
 [ -d "${D}" ]
@@ -25,7 +26,7 @@ cd "$D"
 DIR_NAME=`basename $PWD`
 
 if [ -f package.json ]; then
-npm install
+npm ci
 npm run build
 fi
 
