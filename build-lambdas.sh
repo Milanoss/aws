@@ -8,6 +8,7 @@ apt-get install -y zip
 
 cd repo-channel-api
 npm install
+lerna run --parallel build
 cd ..
 
 # create directory next to cbm-aws-repo-lambdas-all
@@ -24,11 +25,6 @@ do
 cd "$D"
 
 DIR_NAME=`basename $PWD`
-
-if [ -f package.json ]; then
-npm install
-npm run build
-fi
 
 # reset timestamp of all files that will be included in zip, because of checksum calculation
 touch -t 201901010101 . handler.js
