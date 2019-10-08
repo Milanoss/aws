@@ -9,7 +9,7 @@ apt-get install -y zip
 cd repo-channel-api
 npm install lerna -g
 npm install
-lerna run --parallel build
+lerna run build
 cd ..
 
 # create directory next to cbm-aws-repo-lambdas-all
